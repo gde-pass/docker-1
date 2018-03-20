@@ -1,0 +1,1 @@
+docker run --detach --name roach-warden --link spawning-pool:mysql -p 8081:80 -e MYSQL_ROOT_PASSWORD=Kerrigan -e PMA_HOSTS=mysql -e PMA_PORT=3306 -e PMA_USER=root -e PMA_PASSWORD=Kerrigan phpmyadmin/phpmyadmin

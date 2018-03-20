@@ -1,0 +1,9 @@
+docker run -dt --name Abathur -v ~/Abathur:/root/app -p 3000:3000 python:2-slim;\
+docker exec Abathur pip install flask;\
+docker exec Abathur touch /root/app.py;\
+docker exec Abathur bash -c "echo 'from flask import Flask' >> /root/app.py";\
+docker exec Abathur bash -c "echo 'app = Flask(__name__)' >> /root/app.py";\
+docker exec Abathur bash -c "echo \"@app.route('/')\" >> /root/app.py";\
+docker exec Abathur bash -c "echo 'def hello_world():' >> /root/app.py";\
+docker exec Abathur bash -c "echo -e \"\treturn '<h1>Hello World</h1>' \" >> /root/app.py";\
+docker exec Abathur bash -c "export FLASK_APP=/root/app.py && python -m flask run -h 0.0.0.0 -p 3000"

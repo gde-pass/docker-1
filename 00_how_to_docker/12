@@ -1,0 +1,1 @@
+docker run --detach --name=spawning-pool --env=MYSQL_ROOT_PASSWORD=Kerrigan --volume hatchery --env=MYSQL_DATABASE=zerglings --restart on-failure mysql
