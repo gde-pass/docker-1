@@ -5,7 +5,7 @@ RUN apt-get update -y && apt-get upgrade -y
 RUN apt-get install vim wget curl git zsh gcc valgrind -y
 
 # Instalation de OMZ et Sublivim
-RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
+RUN curl -L http://install.ohmyz.sh | sh
 RUN curl https://raw.githubusercontent.com/reversTeam/Sublivim/master/installer.sh | sh
 
 # Creation de l'espace de travail
